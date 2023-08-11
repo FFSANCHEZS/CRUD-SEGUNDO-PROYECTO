@@ -1,7 +1,18 @@
 body{
-    background-color: black;
+    background-color: white;
 }
 
 *{
-    color: white;
+    color: black;
+}
+
+.seccion_primera{
+    text-align: center; /* alineación del texto */
+    color: #000000;
+    background-color: rgb(0, 255, 136);  /* color de fondo para una página */
+}
+
+.seccion_deportistas{
+    text-indent: 50px;  /* sangria de la primera línea */
+    text-align: left; 
 }

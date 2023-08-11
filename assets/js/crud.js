@@ -1,6 +1,8 @@
+// FUNCION DE VALIDACION
+
 function validateForm(){
 
-    // se obtienen los valores de los campos
+    // se obtienen los valores de los campos desde el html
     let email = document.getElementById('inputEmail').value;
     let name = document.getElementById('inputName').value;
     let phone = document.getElementById('inputPhone').value;
