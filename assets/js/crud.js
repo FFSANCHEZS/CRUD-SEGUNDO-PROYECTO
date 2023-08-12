@@ -86,3 +86,16 @@ function addData() {
         document.getElementById('inputPhone').value = "";
     }
 }
+
+// FUNCION PARA BORRAR DATOS DE LA LISTA CON EL BOTON BORRAR
+function deleteData(index) {
+    let listPeople;
+    if (localStorage.getItem('listPeople') == null) {
+        listPeople = [];
+    } else {
+        listPeople = JSON.parse(localStorage.getItem("listPeople"));
+    }
+    listPeople.splice(index, 1);                                        // splice -> permite cambiar el contenido del arreglo eliminando o sustituyendo los elementos existentes por otros nuevos
+    localStorage.setItem('listPeople', JSON.stringify(listPeople));
+    showData();
+}
