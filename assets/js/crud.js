@@ -55,3 +55,34 @@ function showData() {
 }
 document.onload = showData();   // cuando se recargue muestre la data
 
+// FUNCION DE AGREGAR DATOS
+function addData() {
+    if (validateForm() == true) {           // validacion que los campos del formulario sean verdaderos
+
+        let email = document.getElementById('inputEmail').value;
+        let name = document.getElementById('inputName').value;
+        let phone = document.getElementById('inputPhone').value;
+
+        let listPeople;                   // se declara variable listPeople 
+
+        if (localStorage.getItem('listPeople') == null) {
+            listPeople = [];
+        } else {
+            listPeople = JSON.parse(localStorage.getItem("listPeople"));    // JSON.parse -> transforma mi objeto en cadena de texto para pasarlo a localStorage
+        }
+        // se construye el objeto y se guarda como cadena de texto
+        listPeople.push({
+            email: email,         // nombre: valor
+            name: name,
+            phone: phone,
+        });
+
+        // setItem -> cuando reciba una clave y un valor, añadirá estos al almacén, o actualizará el valor si la clave ya existe
+        localStorage.setItem('listPeople', JSON.stringify(listPeople));        // stringity -> convierte un objeto o valor de JavaScript en una cadena de texto JSON
+        showData();
+
+        document.getElementById('inputEmail').value = "";
+        document.getElementById('inputName').value = "";
+        document.getElementById('inputPhone').value = "";
+    }
+}
