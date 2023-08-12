@@ -16,3 +16,7 @@ body{
     text-indent: 50px;  /* sangria de la primera línea */
     text-align: left; 
 }
+
+#btnUpdate{   /* desaparece el boton ACTUALIZAR DATOS */
+    display: none;
+}
