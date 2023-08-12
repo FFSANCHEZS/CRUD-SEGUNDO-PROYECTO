@@ -99,3 +99,44 @@ function deleteData(index) {
     localStorage.setItem('listPeople', JSON.stringify(listPeople));
     showData();
 }
+
+
+// FUNCION PARA DARLE USO A BOTON ACTUALIZAR 
+function updateData(index) {
+    document.getElementById("btnAdd").style.display = 'none';                // al actulizar desaparece el boton guardar
+    document.getElementById("btnUpdate", btnAdd).style.display = 'block';    // bloquear boton para agregar  
+
+    let listPeople;
+    if (localStorage.getItem('listPeople') == null) {
+        listPeople = [];
+    } else {
+        listPeople = JSON.parse(localStorage.getItem("listPeople"));
+    }
+    // rellenar campos del formulario con el editar
+    document.getElementById('inputEmail').value = listPeople[index].email;
+    document.getElementById('inputName').value = listPeople[index].name;
+    document.getElementById('inputPhone').value = listPeople[index].phone;
+
+    // funcion para actulizar los datos
+    document.querySelector("#btnUpdate").onclick = function () {
+        if (validateForm() == true) {
+            //actulizar datos de la lista
+            listPeople[index].email = document.getElementById('inputEmail').value
+            listPeople[index].name = document.getElementById('inputName').value
+            listPeople[index].phone = document.getElementById('inputPhone').value
+            // guardar lista actutualizada en localStorage
+            localStorage.setItem('listPeople', JSON.stringify(listPeople));
+
+            //actulizar la tabla
+            showData();
+            document.getElementById('inputEmail').value = "";
+            document.getElementById('inputName').value = "";
+            document.getElementById('inputPhone').value = "";
+
+            // cambiar visibilidad de los botones
+            document.getElementById("btnAdd").style.display = 'block';
+            document.getElementById("btnUpdate", btnAdd).style.display = 'none';
+        }
+    }
+}
+
