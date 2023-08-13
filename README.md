@@ -1,5 +1,6 @@
 # CRUD-SEGUNDO-PROYECTO2.0
 Segundo Proyecto 2.0
+
 Proyecto creado para poder hacer un seguimiento de los deportistas que hoy se encuentran inscritos en el club de judo Shiru, a través de esto se puede identificar el correo personal de cada uno, nombre completo, telefono personal y el grado de cinturón en el que se encuentran. Ante cualquier eventualidad se puede hacer modificaciones en cada uno de los campos sin necesidad de borrar los datos ya ingresados.
  
 Las tecnologías utilizadas fueron HTML, CSS y JavaScript.	
